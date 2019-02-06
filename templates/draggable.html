@@ -29,10 +29,10 @@
     <script>
 
             // Helpful GH issue for necessity of .Draggable() https://github.com/Shopify/draggable/issues/36
-            const draggable = new Draggable.Draggable(document.querySelectorAll('.drag-drop'), {
-                draggable: '.drag-drop',
-                dropzone: '#container'
-                });
+            // const draggable = new Draggable.Draggable(document.querySelectorAll('.drag-drop'), {
+            //     draggable: '.drag-drop',
+            //     dropzone: '#container'
+            //     });
 
             // Action to take when item is grabbed, moved, and stops moving.
             // draggable.on('drag:start', () => console.log('drag:start'));
@@ -47,8 +47,8 @@
                 dropzone: '#container'
             });
 
-            // droppable.on('droppable:dropped', () => console.log('droppable:dropped'));
-            // droppable.on('droppable:returned', () => console.log('droppable:returned'));
+            droppable.on('droppable:dropped', () => console.log('droppable:dropped'));
+            droppable.on('droppable:returned', () => console.log('droppable:returned'));
 
 
     </script>
