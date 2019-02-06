@@ -6,16 +6,16 @@
 </head>
 <body>
     
-    <div id="container">
+    <div class="container">
         
 
         <!-- Helpful GH issue for necessity of "occupied" https://github.com/Shopify/draggable/issues/258 --> 
         <div class="dropzone">
-            <div class="drag-drop draggable-droppable--occupied">Drag</div>
+            <div class="drag-drop-item draggable-dropzone--occupied">Drag</div>
         </div>
 
         <div class="dropzone">
-            <div class="drag-drop draggable-droppable--occupied">drop</div>
+            <div class="drag-drop-item draggable-dropzone--occupied">drop</div>
         </div>
 
     </div>
@@ -24,22 +24,23 @@
     <script>
 
             // Helpful GH issue for necessity of .Draggable() https://github.com/Shopify/draggable/issues/36
-            // const draggable = new Draggable.Draggable(document.querySelectorAll('.drag-drop'), {
-            //     draggable: '.drag-drop',
-            //     dropzone: '#container'
-            //     });
+            let draggable = new Draggable.Draggable(document.querySelectorAll('.drag-drop'), {
+                draggable: '.drag-drop',
+                dropzone: '#container'
+                });
 
             // Action to take when item is grabbed, moved, and stops moving.
-            // draggable.on('drag:start', () => console.log('drag:start'));
-            // draggable.on('drag:move', () => console.log('drag:move'));
-            // draggable.on('drag:stop', () => console.log('drag:stop'));
+            draggable.on('drag:start', () => console.log('drag:start'));
+            draggable.on('drag:move', () => console.log('drag:move'));
+            draggable.on('drag:stop', () => console.log('drag:stop'));
+            
             // // NEXT:
             // I *imagine* if I want to drop this item elsewhere in my container
             // I will need to create a different function for draggable.on('drag:stop')
-
-            const droppable = new window.Draggable.Droppable(document.querySelectorAll('#container'), {
-                draggable: '.drag-drop',
-                dropzone: '#container'
+            // ^^ This now seems wrong
+            let droppable = new window.Draggable.Droppable(document.querySelectorAll('.container'), {
+                draggable: '.drag-drop-item',
+                dropzone: '.dropzone'
             });
 
             droppable.on('droppable:dropped', () => console.log('droppable:dropped'));

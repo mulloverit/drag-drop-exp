@@ -3,14 +3,22 @@
     color: ;
 }
 
-.drag-drop {
+.drag-drop-item {
     display: inline;
     color: pink;
     background-color: black;
+    cursor: drag;
+    width: 200px;
+    height: 40px;
+    margin: auto;
+}
+
+.dropzone {
+      min-height: 60px;
 }
 
 /*background-image for gradient effect found here: https://gist.github.com/dfrankland/f6fed3e3ccc42e3de482b324126f9542*/
-#container {
+.container {
     width: 500px;
     height: 500px;
     background-image:
