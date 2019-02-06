@@ -18,7 +18,7 @@ def draggable_experiments():
 def interactive_experiments():
 	"""Experiementing with Interactive.js library"""
 
-	return render_template("interactive.html")
+	return render_template("interact.html")
 
 if __name__ == "__main__":
 	app.run(debug=True, host="0.0.0.0")

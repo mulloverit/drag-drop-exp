@@ -5,12 +5,16 @@
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <h1 id="index-header">
-
-    <!-- Helpful GH issue for necessity of "occupied" https://github.com/Shopify/draggable/issues/258 -->
-    <div class="container draggable-droppable--occupied">
+    
+    <div id="container">
+        <div class="dropzone">
+        <!-- Helpful GH issue for necessity of "occupied" https://github.com/Shopify/draggable/issues/258 --> 
+        <h1 id="index-header">
         <div class="drag-drop draggable-droppable--occupied">Drag</div> n&#39 
-        <div class="drag-drop draggable-droppable--occupied">drop</div> experiments</h1>
+        <div class="drag-drop draggable-droppable--occupied">drop</div> experiments
+        </h1>
+    
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
@@ -19,26 +23,25 @@
             // Helpful GH issue for necessity of .Draggable() https://github.com/Shopify/draggable/issues/36
             const draggable = new Draggable.Draggable(document.querySelectorAll('.drag-drop'), {
                 draggable: '.drag-drop',
-                dropzone: '.container'
+                dropzone: '#container'
                 });
 
             // Action to take when item is grabbed, moved, and stops moving.
-            draggable.on('drag:start', () => console.log('drag:start'));
-            draggable.on('drag:move', () => console.log('drag:move'));
-            draggable.on('drag:stop', () => console.log('drag:stop'));
-            // NEXT:
+            // draggable.on('drag:start', () => console.log('drag:start'));
+            // draggable.on('drag:move', () => console.log('drag:move'));
+            // draggable.on('drag:stop', () => console.log('drag:stop'));
+            // // NEXT:
             // I *imagine* if I want to drop this item elsewhere in my container
             // I will need to create a different function for draggable.on('drag:stop')
 
-            // "Droppable not defined" ERROR - not sure yet, hm
-            // Droppable requires a prepend of "window." ?? example: https://jsbin.com/qunadic/6/edit?html,css,js,output
-            // Addition of "window." changes error to Uncaught TypeError: Cannot read property 'Draggable' of undefined"
-            // which is essentially same error.
-            // Shows use of .default in place of .Draggable https://codepen.io/beefchimi/pen/zjodrB -- both error with "undefined"
-            const droppable = new window.Droppable.Draggable(document.querySelectorAll('.container'), {
+            const droppable = new window.Draggable.Droppable(document.querySelectorAll('#container'), {
                 draggable: '.drag-drop',
-                dropzone: '.container'
+                dropzone: '#container'
             });
+
+            // droppable.on('droppable:dropped', () => console.log('droppable:dropped'));
+            // droppable.on('droppable:returned', () => console.log('droppable:returned'));
+
 
     </script>
 

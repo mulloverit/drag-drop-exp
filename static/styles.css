@@ -5,10 +5,12 @@
 
 .drag-drop {
     display: inline;
+    color: pink;
+    background-color: black;
 }
 
 /*background-image for gradient effect found here: https://gist.github.com/dfrankland/f6fed3e3ccc42e3de482b324126f9542*/
-.container {
+#container {
     width: 500px;
     height: 500px;
     background-image:
@@ -18,7 +20,6 @@
       linear-gradient(135deg, transparent 75%, #ccc 75%);
     background-size:25px 25px; /* Must be a square */
     background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; /* Must be half of one side of the square */
-    position: relative;
 }
 
 #index-text {
