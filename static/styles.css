@@ -1,19 +1,7 @@
-#index-header {
+body {
+    height: 100%;
+    background-image: linear-gradient(90deg, #ffc1c3, #a8f7c9);
     font-family: sans-serif;
-    color: ;
-}
-
-.drag-drop-item {
-    display: inline;
-    color: pink;
-    background-color: black;
-    width: 500px;
-    height: 40px;
-    margin: auto;
-}
-
-.dropzone {
-      min-height: 60px;
 }
 
 /*background-image for gradient effect found here: https://gist.github.com/dfrankland/f6fed3e3ccc42e3de482b324126f9542*/
@@ -29,12 +17,15 @@
     background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; /* Must be half of one side of the square */
 }
 
-#index-text {
-    position: absolute;
+.dropzone {
+      min-height: 60px;
 }
 
-body {
-    height: 100%;
-    background-image: linear-gradient(90deg, #ffc1c3, #a8f7c9);
-    font-family: sans-serif;
+.drag-drop-item {
+    display: inline;
+    color: pink;
+    background-color: black;
+    width: 500px;
+    height: 40px;
+    margin: auto;
 }
