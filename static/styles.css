@@ -7,8 +7,7 @@
     display: inline;
     color: pink;
     background-color: black;
-    cursor: drag;
-    width: 200px;
+    width: 500px;
     height: 40px;
     margin: auto;
 }
